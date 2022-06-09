@@ -1,13 +1,7 @@
-const path = require('path');
-const fs = require('fs');
 
-function generateMarkdown(data) {
-   const codeSnippet = String.fromCharCode(96);
-    let responses =
-        `
-// # ${data.projectName}
+// # undefined
 
-// ## ${data.description}
+// ## undefined
 
 These instructions will get you a copy of the project up and running on your 
 local machine for development and testing purposes. See deployment for notes 
@@ -16,14 +10,14 @@ on how to deploy the project on a live system.
 ### Table of Contents
 [Handlebars templates](http://handlebarsjs.com/)
 
-- [Github Account](${data.account})
-- [Repo Contanct Email](${data.email})
-- [Github Account](${data.projectName})
-- [Github Account](${data.account})
-- [Github Account](${data.account})
-- [Github Account](${data.account})
-- [Github Account](${data.account})
-- [Github Account](${data.account})
+- [Github Account](undefined)
+- [Repo Contanct Email](undefined)
+- [Github Account](undefined)
+- [Github Account](undefined)
+- [Github Account](undefined)
+- [Github Account](undefined)
+- [Github Account](undefined)
+- [Github Account](undefined)
 
 
 
@@ -34,7 +28,8 @@ Give examples
 
 Run the following commands while in the local repository:
 
-${data.deployment ? data.deployment : '- npm i \n - npm start'}
+- npm i 
+-npm start
 
 ## Usage
 
@@ -88,10 +83,3 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Hat tip to anyone whose code was used
 * Inspiration
 * etc
-`;
-    return fs.writeFileSync(path.join(process.cwd(), 'Generated-ReadME', `${data.projectName}-ReadME.md`), responses);
-
-}
-
-
-module.exports = generateMarkdown;

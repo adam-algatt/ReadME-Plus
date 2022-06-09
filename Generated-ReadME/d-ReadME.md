@@ -1,30 +1,13 @@
-const path = require('path');
-const fs = require('fs');
 
-function generateMarkdown(data) {
-   const codeSnippet = String.fromCharCode(96);
-    let responses =
-        `
-// # ${data.projectName}
+// # d
 
-// ## ${data.description}
+// ## d
 
-These instructions will get you a copy of the project up and running on your 
-local machine for development and testing purposes. See deployment for notes 
-on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Table of Contents
-[Handlebars templates](http://handlebarsjs.com/)
 
-- [Github Account](${data.account})
-- [Repo Contanct Email](${data.email})
-- [Github Account](${data.projectName})
-- [Github Account](${data.account})
-- [Github Account](${data.account})
-- [Github Account](${data.account})
-- [Github Account](${data.account})
-- [Github Account](${data.account})
-
+What things you need to install the software and how to install them
 
 
 Give examples
@@ -32,9 +15,21 @@ Give examples
 
 ### Installation
 
-Run the following commands while in the local repository:
+A step by step series of examples that tell you how to get a development env running
 
-${data.deployment ? data.deployment : '- npm i \n - npm start'}
+Say what the step will be
+
+
+Give the example
+
+
+And repeat
+
+
+until finished
+
+
+End with an example of getting some data out of the system or using it for a little demo
 
 ## Usage
 
@@ -88,10 +83,3 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Hat tip to anyone whose code was used
 * Inspiration
 * etc
-`;
-    return fs.writeFileSync(path.join(process.cwd(), 'Generated-ReadME', `${data.projectName}-ReadME.md`), responses);
-
-}
-
-
-module.exports = generateMarkdown;

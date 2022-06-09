@@ -4,12 +4,13 @@
   "description": "Generates readme files",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "mon": "nodemon ./index.js",
+    "start": "node ./index.js"
   },
   "author": "Adam Algatt",
   "license": "ISC",
   "dependencies": {
+    "colors": "^1.4.0",
     "fs": "^0.0.1-security",
     "inquirer": "^8.2.2",
     "util": "^0.12.4"
