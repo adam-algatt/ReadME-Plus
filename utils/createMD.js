@@ -1,95 +1,64 @@
 const path = require('path');
 const fs = require('fs');
+let keys = []; 
 
 function generateMarkdown(data) {
-let responses = 
-    `
-// # ${data.projectName}
+  let codeSnippet = '\`\`\`';
+    let responses =
+        `
+${data.license !== 'None' && data.license !== undefined ? `[![License: ${data.license}](https://img.shields.io/badge/license-${data.license}-green.svg)](https://opensource.org/licenses/${data.license})` : ''}
+ # ${data.projectName}
+ 
+ ## Description
 
-// ## ${data.description}
+ ${data.description}
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+## Table of Contents
 
-### Table of Contents
+* [Installation](#installation)
 
-What things you need to install the software and how to install them
-
-
-Give examples
-
-
-### Installation
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-
-Give the example
+* [Usage](#usage)
+${data.license !== 'None' ? `\n* [License](#license)\n` : ''}
+* [Tests](#tests)
+${data.contributing !== 'None' ? `\n* [Contributing](#contributing)\n` : ''}
+* [Questions](#questions)
+${data.acknowledgements ? `\n* [Acknowledgments](#acknowledgments)` : ''}
 
 
-And repeat
+## Installation
 
+Run the following command to install dependencies:
 
-until finished
+${codeSnippet} 
 
+${data.deployment}
 
-End with an example of getting some data out of the system or using it for a little demo
+${codeSnippet}
 
-## Usage
+## Usage 
 
-Explain how to run the automated tests for this system
+${data.usage} 
+${data.license ? `\n## License\n\n This project is licensed under the ${data.license} license.` : ''}
+${data.contributers ? `\n## Contributing\n\n${data.contributers}\n` : ''}
+## Tests 
 
-### Contributing
+${data.test}
 
-Explain what these tests test and why
+${codeSnippet}
+${data.testCommand}
+${codeSnippet}
+${data.contributing ? `\n## Contributing\n\n ${data.contributing}` : ''}
+${data.acknowledgements ? `\n## Acknowledgments\n\n ${data.acknowledgements}` : ''}
 
-Give an example
+## Questions
 
+Please direct any questions you have regarding this repo to: 
+[${data.email}](mailto:${data.email}) 
 
-### Tests
-
-Explain what these tests test and why
-
-
-Give an example
-
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+To see more of my repositories visit my github at: \n\n [https://github.com/${data.account}](https://github.com/${data.account})&nbsp;&nbsp;&nbsp;&nbsp;
+![Alternate image text](https://cdn-icons-png.flaticon.com/64/25/25231.png)
 `;
-return fs.writeFileSync(path.join(process.cwd(), 'Generated-ReadME', `${data.projectName}-ReadME.md`), responses); 
+    return fs.writeFileSync(path.join(process.cwd(), 'Generated-ReadME', `${data.projectName}-ReadME.md`), responses);
 
 }
 
