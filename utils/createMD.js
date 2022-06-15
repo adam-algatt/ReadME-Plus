@@ -38,7 +38,7 @@ ${codeSnippet}
 ## Usage 
 
 ${data.usage} 
-${data.license ? `\n## License\n\n This project is licensed under the ${data.license} license` : ''}
+${data.license ? `\n## License\n\n This project is licensed under the ${data.license} license.` : ''}
 ${data.contributers ? `\n## Contributing\n\n${data.contributers}\n` : ''}
 ## Tests 
 
