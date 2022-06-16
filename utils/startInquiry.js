@@ -20,7 +20,7 @@ function askQuestions() {
         {
           type: 'input',
           name: 'email',
-          message: 'Please enter a contact email address for this repo? (This will only be used if you fill out the contribution section)',
+          message: 'Please enter a contact email address for this repo?(Required)',
           validate: emailInput => {
             validEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailInput)
             return (validEmail ? true : 'Please enter a valid email address.');
@@ -65,7 +65,7 @@ function askQuestions() {
         {
           type: 'input',
           name: 'test',
-          message: 'If your repo has a test function please enter what your tests are testing for.',
+          message: 'Please list what your repository test is testing for(Required).',
           validate: testInput => {
             return (testInput ? true : `Testing information is required ${false}`);
           }
