@@ -38,8 +38,7 @@ ${codeSnippet}
 ## Usage 
 
 ${data.usage} 
-${data.license ? `\n## License\n\n This project is licensed under the ${data.license} license` : ''}
-${data.contributers ? `\n## Contributing\n\n${data.contributers}\n` : ''}
+${data.license ? `\n## License\n\n This project is licensed under the ${data.license} license\n` : ''}
 ## Tests 
 
 ${data.test}
@@ -47,7 +46,7 @@ ${data.test}
 ${codeSnippet}
 ${data.testCommand}
 ${codeSnippet}
-${data.contributing ? `\n## Contributing\n\n ${data.contributing}` : ''}
+${data.contributing ? `\n## Contributing\n\n ${data.contributing}\n` : ''}
 ${data.acknowledgements ? `\n## Acknowledgments\n\n ${data.acknowledgements}` : ''}
 
 ## Questions
