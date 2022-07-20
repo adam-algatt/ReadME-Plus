@@ -3,9 +3,6 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const path = require('path');
 const Choices = require('inquirer/lib/objects/choices');
-const {
-  type
-} = require('express/lib/response');
 
 function askQuestions() {
   inquirer.prompt(
