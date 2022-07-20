@@ -20,7 +20,7 @@ ${data.license !== 'None' && data.license !== undefined ? `[![License: ${data.li
 * [Usage](#usage)
 ${data.license !== 'None' ? `\n* [License](#license)\n` : ''}
 * [Tests](#tests)
-${data.contributing !== 'None' ? `\n* [Contributing](#contributing)\n` : ''}
+${data.contributing  ? `\n* [Contributing](#contributing)\n` : ''}
 * [Questions](#questions)
 ${data.acknowledgements ? `\n* [Acknowledgments](#acknowledgments)` : ''}
 
