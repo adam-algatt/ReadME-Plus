@@ -36,6 +36,8 @@ npm i
 
 After program dependencies have been installed run an integrated terminal window from the main directory(where index.js is located). Enter ```npm start``` in the terminal window to begin to begin prompts. Once all prompts have been answered you can edit/view the readME generated in the Generated-ReadME directory. 
 
+<a href="https://drive.google.com/file/d/1x2QK0-pHt1TpCJ-C0dZfRmkiatS3SJN_/view">Video Walkthrough</a> 
+
 ## License
 
  This project is licensed under the MIT license.
